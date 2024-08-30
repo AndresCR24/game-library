@@ -9,9 +9,21 @@ import SwiftUI
 
 @main
 struct BibliotecaIphoneIpadApp: App {
+    
+    // register app delegate for Firebase setup
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        
+        let login = FirebaseViewModel()
+        
+      WindowGroup {
+        NavigationStack{
+            ContentView().environmentObject(login)
         }
+      }
     }
 }
+
+
+

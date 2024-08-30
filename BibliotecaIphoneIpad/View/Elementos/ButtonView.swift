@@ -12,12 +12,16 @@ struct ButtonView: View {
     @Binding var index: String // para dirigirnos a diferentes secciones de la app
     @Binding var menu: Bool  // abrir un menu desplegable de lado
     var title: String // por que sera parametro
+    var device = UIDevice.current.userInterfaceIdiom //
     
     var body: some View {
         
         Button(action: {
             withAnimation {
                 index = title
+                if device == .phone {
+                    menu.toggle()
+                }
             }
         }) {
             Text(title)
@@ -30,7 +34,4 @@ struct ButtonView: View {
 }
 
 
-#Preview {
-    // Proporcionar valores predeterminados para la vista previa
-    ButtonView(index: .constant("Inicio"), menu: .constant(false), title: "Inicio")
-}
+

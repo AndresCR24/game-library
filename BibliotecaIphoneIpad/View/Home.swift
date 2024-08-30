@@ -10,6 +10,11 @@ import SwiftUI
 struct Home: View {
     @State private var index = "Playstation"
     @State private var menu = false
+    @State private var widthMenu = UIScreen.main.bounds.width
+    @Environment(\.horizontalSizeClass) var width
+    
+    var device = UIDevice.current.userInterfaceIdiom
+    
     
     var body: some View {
         ZStack() {
@@ -17,8 +22,15 @@ struct Home: View {
                 NavBar(index: $index, menu: $menu)
                 ZStack {
                     if index == "Playstation" {
-                        VStack{
-                            Color.blue
+                        ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false) {
+                            
+                            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 20), count: getColumns()), spacing: 20){
+                                
+                                ForEach(1...9, id:\.self) { _ in
+                                    CardView()
+                                        .padding(.all)
+                                }
+                            }
                         }
                     } else if index == "Xbox" {
                         VStack{
@@ -58,12 +70,20 @@ struct Home: View {
                         }
                         Spacer()
                     }
+                    .frame(width: widthMenu - 150)
                     .background(Color.purple)
                 }
             }
         }
+        .background(Color.white.opacity(0.9))
+    }
+    
+    func getColumns() -> Int {
+        return (device == .pad) ? 3 : ((device == .phone && width == .regular) ? 3 : 1)
     }
 }
+
+
 
 #Preview {
     Home()

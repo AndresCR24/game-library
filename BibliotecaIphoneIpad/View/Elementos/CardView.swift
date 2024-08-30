@@ -9,10 +9,22 @@ import SwiftUI
 
 struct CardView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 20) {
+            
+            Image("gowRagnarok")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+            Text("gowRagnarok")
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                .bold()
+                .foregroundStyle(.black)
+        }
+        .padding()
+        .background(Color.white)
+        .clipShape(.rect(cornerRadius: 20))
     }
 }
 
-#Preview {
-    CardView()
-}
+//#Preview {
+//    CardView()
+//}
