@@ -14,6 +14,10 @@
 		2210CBF62C81F7A9004B2666 /* BibliotecaIphoneIpadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2210CBF52C81F7A9004B2666 /* BibliotecaIphoneIpadTests.swift */; };
 		2210CC002C81F7A9004B2666 /* BibliotecaIphoneIpadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2210CBFF2C81F7A9004B2666 /* BibliotecaIphoneIpadUITests.swift */; };
 		2210CC022C81F7A9004B2666 /* BibliotecaIphoneIpadUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2210CC012C81F7A9004B2666 /* BibliotecaIphoneIpadUITestsLaunchTests.swift */; };
+		2210CC112C81F83E004B2666 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2210CC102C81F83E004B2666 /* NavBar.swift */; };
+		2210CC132C81F84C004B2666 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2210CC122C81F84C004B2666 /* CardView.swift */; };
+		2210CC152C81F85B004B2666 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2210CC142C81F85B004B2666 /* ButtonView.swift */; };
+		2210CC172C81F86F004B2666 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2210CC162C81F86E004B2666 /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		2210CBFB2C81F7A9004B2666 /* BibliotecaIphoneIpadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BibliotecaIphoneIpadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2210CBFF2C81F7A9004B2666 /* BibliotecaIphoneIpadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaIphoneIpadUITests.swift; sourceTree = "<group>"; };
 		2210CC012C81F7A9004B2666 /* BibliotecaIphoneIpadUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaIphoneIpadUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2210CC102C81F83E004B2666 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
+		2210CC122C81F84C004B2666 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		2210CC142C81F85B004B2666 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		2210CC162C81F86E004B2666 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,7 @@
 		2210CBE32C81F7A7004B2666 /* BibliotecaIphoneIpad */ = {
 			isa = PBXGroup;
 			children = (
+				2210CC0E2C81F813004B2666 /* View */,
 				2210CBE42C81F7A7004B2666 /* BibliotecaIphoneIpadApp.swift */,
 				2210CBE62C81F7A7004B2666 /* ContentView.swift */,
 				2210CBE82C81F7A9004B2666 /* Assets.xcassets */,
@@ -125,6 +134,25 @@
 				2210CC012C81F7A9004B2666 /* BibliotecaIphoneIpadUITestsLaunchTests.swift */,
 			);
 			path = BibliotecaIphoneIpadUITests;
+			sourceTree = "<group>";
+		};
+		2210CC0E2C81F813004B2666 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2210CC0F2C81F828004B2666 /* Elementos */,
+				2210CC162C81F86E004B2666 /* Home.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2210CC0F2C81F828004B2666 /* Elementos */ = {
+			isa = PBXGroup;
+			children = (
+				2210CC102C81F83E004B2666 /* NavBar.swift */,
+				2210CC122C81F84C004B2666 /* CardView.swift */,
+				2210CC142C81F85B004B2666 /* ButtonView.swift */,
+			);
+			path = Elementos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +287,10 @@
 			files = (
 				2210CBE72C81F7A7004B2666 /* ContentView.swift in Sources */,
 				2210CBE52C81F7A7004B2666 /* BibliotecaIphoneIpadApp.swift in Sources */,
+				2210CC152C81F85B004B2666 /* ButtonView.swift in Sources */,
+				2210CC132C81F84C004B2666 /* CardView.swift in Sources */,
+				2210CC172C81F86F004B2666 /* Home.swift in Sources */,
+				2210CC112C81F83E004B2666 /* NavBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
