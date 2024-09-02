@@ -28,6 +28,12 @@
 		2210CC292C82A77B004B2666 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2210CC282C82A77A004B2666 /* AddView.swift */; };
 		2210CC2B2C8361F0004B2666 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2210CC2A2C8361F0004B2666 /* ImagePicker.swift */; };
 		2210CC2E2C853AF8004B2666 /* FirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2210CC2D2C853AF8004B2666 /* FirebaseModel.swift */; };
+		2210CC302C854105004B2666 /* PortadaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2210CC2F2C854105004B2666 /* PortadaViewModel.swift */; };
+		2210CC322C85425D004B2666 /* ImagenFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2210CC312C85425D004B2666 /* ImagenFirebase.swift */; };
+		2210CC342C85446A004B2666 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2210CC332C85446A004B2666 /* ListView.swift */; };
+		226DDEF42C864F9A00D26952 /* EditarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226DDEF32C864F9A00D26952 /* EditarView.swift */; };
+		226DDEF62C866FDA00D26952 /* CardViewXbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226DDEF52C866FDA00D26952 /* CardViewXbox.swift */; };
+		226DDEF82C8670AB00D26952 /* CardViewNintendo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226DDEF72C8670AB00D26952 /* CardViewNintendo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +75,12 @@
 		2210CC282C82A77A004B2666 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		2210CC2A2C8361F0004B2666 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		2210CC2D2C853AF8004B2666 /* FirebaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseModel.swift; sourceTree = "<group>"; };
+		2210CC2F2C854105004B2666 /* PortadaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortadaViewModel.swift; sourceTree = "<group>"; };
+		2210CC312C85425D004B2666 /* ImagenFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagenFirebase.swift; sourceTree = "<group>"; };
+		2210CC332C85446A004B2666 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		226DDEF32C864F9A00D26952 /* EditarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarView.swift; sourceTree = "<group>"; };
+		226DDEF52C866FDA00D26952 /* CardViewXbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewXbox.swift; sourceTree = "<group>"; };
+		226DDEF72C8670AB00D26952 /* CardViewNintendo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewNintendo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +179,7 @@
 				2210CC162C81F86E004B2666 /* Home.swift */,
 				2210CC262C8285E5004B2666 /* Login.swift */,
 				2210CC282C82A77A004B2666 /* AddView.swift */,
+				226DDEF32C864F9A00D26952 /* EditarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -175,9 +188,13 @@
 			isa = PBXGroup;
 			children = (
 				2210CC102C81F83E004B2666 /* NavBar.swift */,
-				2210CC122C81F84C004B2666 /* CardView.swift */,
 				2210CC142C81F85B004B2666 /* ButtonView.swift */,
 				2210CC2A2C8361F0004B2666 /* ImagePicker.swift */,
+				2210CC312C85425D004B2666 /* ImagenFirebase.swift */,
+				2210CC332C85446A004B2666 /* ListView.swift */,
+				2210CC122C81F84C004B2666 /* CardView.swift */,
+				226DDEF52C866FDA00D26952 /* CardViewXbox.swift */,
+				226DDEF72C8670AB00D26952 /* CardViewNintendo.swift */,
 			);
 			path = Elementos;
 			sourceTree = "<group>";
@@ -186,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				2210CC242C827CF9004B2666 /* FirebaseViewModel.swift */,
+				2210CC2F2C854105004B2666 /* PortadaViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -339,16 +357,22 @@
 			files = (
 				2210CC2E2C853AF8004B2666 /* FirebaseModel.swift in Sources */,
 				2210CBE72C81F7A7004B2666 /* ContentView.swift in Sources */,
+				2210CC342C85446A004B2666 /* ListView.swift in Sources */,
 				2210CBE52C81F7A7004B2666 /* BibliotecaIphoneIpadApp.swift in Sources */,
 				2210CC292C82A77B004B2666 /* AddView.swift in Sources */,
 				2210CC152C81F85B004B2666 /* ButtonView.swift in Sources */,
+				2210CC302C854105004B2666 /* PortadaViewModel.swift in Sources */,
 				2210CC132C81F84C004B2666 /* CardView.swift in Sources */,
 				2210CC222C82275B004B2666 /* AppDelegate.swift in Sources */,
 				2210CC172C81F86F004B2666 /* Home.swift in Sources */,
+				2210CC322C85425D004B2666 /* ImagenFirebase.swift in Sources */,
 				2210CC2B2C8361F0004B2666 /* ImagePicker.swift in Sources */,
 				2210CC272C8285E5004B2666 /* Login.swift in Sources */,
+				226DDEF62C866FDA00D26952 /* CardViewXbox.swift in Sources */,
 				2210CC112C81F83E004B2666 /* NavBar.swift in Sources */,
 				2210CC252C827CF9004B2666 /* FirebaseViewModel.swift in Sources */,
+				226DDEF42C864F9A00D26952 /* EditarView.swift in Sources */,
+				226DDEF82C8670AB00D26952 /* CardViewNintendo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

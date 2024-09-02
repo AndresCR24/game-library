@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CardView: View {
+struct CardViewNintendo: View {
     var titulo: String
     var portada: String
     var index: FirebaseModel
@@ -40,22 +40,10 @@ struct CardView: View {
                 .background(Capsule().stroke(Color.black))
                 
             }
-//            Button(action: {
-//                datos.delete(index: index, plataforma: plataforma)
-//            }, label: {
-//                Label(
-//                    title: { Text("Eliminar") },
-//                    icon: { Image(systemName: "trash") }
-//                )
-//            })
-//            .foregroundStyle(.black)
-//            .padding(.vertical, 5)
-//            .padding(.horizontal, 25)
-//            .background(Capsule().stroke(Color.black))
 
         }
         .padding()
-        .background(Color.playstation)
+        .background(Color.nintendo)
         .clipShape(.rect(cornerRadius: 20))
     }
 }

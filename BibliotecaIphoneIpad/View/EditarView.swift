@@ -8,12 +8,14 @@
 import SwiftUI
 import PhotosUI
 
-struct AddView: View {
+struct EditarView: View {
     
     @State private var titulo = ""
     @State private var descripcion = ""
-    var consolas = ["Playstation", "Xbox", "Nintendo"]
-    @State private var plataforma = "Playstation"
+    
+    var plataforma = "Playstation"
+    var datos: FirebaseModel
+    
     @StateObject var guardar = FirebaseViewModel()
     
     @State private var imagenData: Data = .init(capacity: 0)
@@ -21,6 +23,8 @@ struct AddView: View {
     @State private var imagePicker = false
     @State private var source: UIImagePickerController.SourceType = .camera
     @State private var progress = false
+    
+    @Environment(\.dismiss) var dismissMode
     //@State private var source
     
     var body: some View {
@@ -31,25 +35,16 @@ struct AddView: View {
                 Color.yellow.ignoresSafeArea()
                 // Inicio Vstack
                 VStack() {
-                    //Este metodo se cambio por el .NavigationDestination al final del NavigationStack
-//                    NavigationLink(isActive: $imagePicker) {
-//                        ImagePicker(show: $imagePicker, image: $imagenData, source: source)
-//                    } label: {
-//                        EmptyView()
-//                    }
-//
-//                    .toolbar(.hidden)
                     TextField("Titulo", text: $titulo)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .onAppear {
+                            titulo = datos.titulo
+                        }
                     TextEditor(text: $descripcion)
                         .frame(height: 200)
-                    Picker("Consolas", selection: $plataforma) {
-                        
-                        ForEach(consolas, id: \.self) {item in
-                            Text(item)
-                                .foregroundStyle(.black)
+                        .onAppear {
+                            descripcion = datos.descripcion
                         }
-                    }
                     
                     Button(action: {
                         mostrarMenu.toggle()
@@ -61,7 +56,7 @@ struct AddView: View {
                     }
                     .actionSheet(isPresented: $mostrarMenu, content: {
                         ActionSheet(title: Text("Menu"), message: Text("Selecciona una opcion"), buttons: [
-                            .default(Text("camara"), action: {
+                            .default(Text("Camara"), action: {
                                 source = .camera
                                 imagePicker.toggle()
                             }),
@@ -70,7 +65,6 @@ struct AddView: View {
                                 imagePicker.toggle()
                             }),
                             .default(Text("Cancelar"))
-                            
                         ])
                     })
                     .sheet(isPresented: $imagePicker) {
@@ -82,46 +76,52 @@ struct AddView: View {
                             .resizable()
                             .frame(width: 250, height: 250)
                             .clipShape(.rect(cornerRadius: 20))
-                        
-                        Button(action: {
-                            progress = true
-                            guardar.save(titulo: titulo, descripcion: descripcion, plataforma: plataforma, portada: imagenData) { done in
+                    }
+                    
+                    Button(action: {
+                        if imagenData.isEmpty {
+                            guardar.edit(titulo: titulo, descripcion: descripcion, plataforma: plataforma, id: datos.id) { done in
                                 if done {
-                                    titulo = ""
-                                    descripcion = ""
-                                    imagenData = .init(capacity: 0)
-                                    progress = false
+                                    dismissMode()
                                 }
                             }
-                        }) {
-                            Text("Guardar")
-                                .foregroundStyle(.black)
-                                .bold()
-                                .font(.largeTitle)
+                        } else {
+                            progress = true
+                            guardar.editWithImage(titulo: titulo, descripcion: descripcion, plataforma: plataforma, id: datos.id,
+                                                  index: datos, portada: imagenData) { done in
+                                if done {
+                                    dismissMode()
+                                }
+                            }
                         }
+                    }) {
+                        Text("Editar")
+                            .foregroundStyle(.black)
+                            .bold()
+                            .font(.largeTitle)
                     }
+                    
                     if progress {
-                        Text("Cargando espera un momento")
+                        Text("Cargando, espera un momento")
                             .foregroundStyle(.black)
                         ProgressView()
                     }
-           
-                   
+                    
                     Spacer()
                 }
                 //Fin Vstack
                 .padding()
             }
             //Fin Zstack
-            
         }
-        //Fin navigationStack
-//        .navigationDestination(isPresented: $imagePicker) {
-//            ImagePicker(show: $imagePicker, image: $imagenData, source: source)
-//        }
-        //.toolbar(.hidden)
+        .navigationViewStyle(StackNavigationViewStyle())
+        .onAppear() {
+            print(datos)
+        }
+        //Fin NavigationStack
     }
 }
+
 
 //#Preview {
 //    AddView()
