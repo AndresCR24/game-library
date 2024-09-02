@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
-
+import Firebase
+import FirebaseAuth
 struct NavBar: View {
     
     var device = UIDevice.current.userInterfaceIdiom
     @Binding var index: String // Se colocan binding ya que el navbar no es una vista como tal
     @Binding var menu: Bool// si no que se utilizara en el home y se envia ese binding al home
+    @EnvironmentObject var loginShow: FirebaseViewModel
     
     var body: some View {
         HStack {
@@ -28,6 +30,24 @@ struct NavBar: View {
                     ButtonView(index: $index, menu: $menu, title: "Playstation")
                     ButtonView(index: $index, menu: $menu, title: "Xbox")
                     ButtonView(index: $index, menu: $menu, title: "Nintendo")
+                    ButtonView(index: $index, menu: $menu, title: "Agregar")
+
+                    Button(action: {
+                        try! Auth.auth().signOut()
+                        UserDefaults.standard.removeObject(forKey: "sesion")
+                        loginShow.show = false
+                    }) {
+                        Text("Salir")
+                            .font(.title)
+                            .frame(width: 200)
+                            .foregroundStyle(.white)
+                            .padding(.horizontal, 14)
+                        
+                    }
+                    .background(
+                        Capsule().stroke(Color.white)
+                    )
+
                 }
             } else {
                 // Menu para Iphone

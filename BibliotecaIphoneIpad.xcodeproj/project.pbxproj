@@ -25,6 +25,9 @@
 		2210CC222C82275B004B2666 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2210CC212C82275B004B2666 /* AppDelegate.swift */; };
 		2210CC252C827CF9004B2666 /* FirebaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2210CC242C827CF9004B2666 /* FirebaseViewModel.swift */; };
 		2210CC272C8285E5004B2666 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2210CC262C8285E5004B2666 /* Login.swift */; };
+		2210CC292C82A77B004B2666 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2210CC282C82A77A004B2666 /* AddView.swift */; };
+		2210CC2B2C8361F0004B2666 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2210CC2A2C8361F0004B2666 /* ImagePicker.swift */; };
+		2210CC2E2C853AF8004B2666 /* FirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2210CC2D2C853AF8004B2666 /* FirebaseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		2210CC212C82275B004B2666 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2210CC242C827CF9004B2666 /* FirebaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseViewModel.swift; sourceTree = "<group>"; };
 		2210CC262C8285E5004B2666 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		2210CC282C82A77A004B2666 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		2210CC2A2C8361F0004B2666 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		2210CC2D2C853AF8004B2666 /* FirebaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,7 @@
 		2210CBE32C81F7A7004B2666 /* BibliotecaIphoneIpad */ = {
 			isa = PBXGroup;
 			children = (
+				2210CC2C2C853AE8004B2666 /* Model */,
 				2210CC232C827CD9004B2666 /* ViewModel */,
 				2210CC0E2C81F813004B2666 /* View */,
 				2210CBE42C81F7A7004B2666 /* BibliotecaIphoneIpadApp.swift */,
@@ -159,6 +166,7 @@
 				2210CC0F2C81F828004B2666 /* Elementos */,
 				2210CC162C81F86E004B2666 /* Home.swift */,
 				2210CC262C8285E5004B2666 /* Login.swift */,
+				2210CC282C82A77A004B2666 /* AddView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,6 +177,7 @@
 				2210CC102C81F83E004B2666 /* NavBar.swift */,
 				2210CC122C81F84C004B2666 /* CardView.swift */,
 				2210CC142C81F85B004B2666 /* ButtonView.swift */,
+				2210CC2A2C8361F0004B2666 /* ImagePicker.swift */,
 			);
 			path = Elementos;
 			sourceTree = "<group>";
@@ -179,6 +188,14 @@
 				2210CC242C827CF9004B2666 /* FirebaseViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2210CC2C2C853AE8004B2666 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2210CC2D2C853AF8004B2666 /* FirebaseModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,12 +337,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2210CC2E2C853AF8004B2666 /* FirebaseModel.swift in Sources */,
 				2210CBE72C81F7A7004B2666 /* ContentView.swift in Sources */,
 				2210CBE52C81F7A7004B2666 /* BibliotecaIphoneIpadApp.swift in Sources */,
+				2210CC292C82A77B004B2666 /* AddView.swift in Sources */,
 				2210CC152C81F85B004B2666 /* ButtonView.swift in Sources */,
 				2210CC132C81F84C004B2666 /* CardView.swift in Sources */,
 				2210CC222C82275B004B2666 /* AppDelegate.swift in Sources */,
 				2210CC172C81F86F004B2666 /* Home.swift in Sources */,
+				2210CC2B2C8361F0004B2666 /* ImagePicker.swift in Sources */,
 				2210CC272C8285E5004B2666 /* Login.swift in Sources */,
 				2210CC112C81F83E004B2666 /* NavBar.swift in Sources */,
 				2210CC252C827CF9004B2666 /* FirebaseViewModel.swift in Sources */,
@@ -496,6 +516,8 @@
 				DEVELOPMENT_TEAM = U2YGJ53TDZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Usar la camara";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Usar la libreria";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -527,6 +549,8 @@
 				DEVELOPMENT_TEAM = U2YGJ53TDZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Usar la camara";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Usar la libreria";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

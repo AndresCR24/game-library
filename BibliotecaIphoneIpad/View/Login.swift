@@ -40,6 +40,7 @@ struct Login: View {
                     login.login(email: email, password: password) { done in
                         if done {
                             UserDefaults.standard.set(true, forKey: "sesion")
+                            print("seccion guardada en userDefaults")
                             loginShow.show.toggle()
                         }
                     }
@@ -55,7 +56,27 @@ struct Login: View {
                     Capsule()
                         .stroke(Color.white)
                 )
-
+                Divider()
+                Button(action: {
+                    login.createUser(email: email, password: password) { done in
+                        if done {
+                            UserDefaults.standard.set(true, forKey: "sesion")
+                            print("seccion guardada en userDefaults")
+                            loginShow.show.toggle()
+                        }
+                    }
+                }) {
+                    Text("Registrarse")
+                        .font(.title)
+                        .frame(width: 200)
+                        .foregroundStyle(.white)
+                        .padding(.vertical, 10)
+                    
+                }
+                .background(
+                    Capsule()
+                        .stroke(Color.white)
+                )
                 
             }
             .padding()

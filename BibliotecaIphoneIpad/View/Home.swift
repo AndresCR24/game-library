@@ -22,24 +22,30 @@ struct Home: View {
                 NavBar(index: $index, menu: $menu)
                 ZStack {
                     if index == "Playstation" {
-                        ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false) {
-                            
-                            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 20), count: getColumns()), spacing: 20){
+                        ZStack {
+                            Color.blue
+                            ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false) {
                                 
-                                ForEach(1...9, id:\.self) { _ in
-                                    CardView()
-                                        .padding(.all)
+                                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 20), count: getColumns()), spacing: 20){
+                                    
+                                    ForEach(1...9, id:\.self) { _ in
+                                        CardView()
+                                            .padding(.all)
+                                    }
                                 }
                             }
                         }
+                        
                     } else if index == "Xbox" {
                         VStack{
                             Color.green
                         }
-                    } else {
+                    } else if index == "Nintendo" {
                         VStack{
                             Color.red
                         }
+                    } else {
+                        AddView()
                     }
                 }
             }
@@ -59,7 +65,7 @@ struct Home: View {
                                     .font(.system(size: 22, weight: .bold))
                                     .foregroundStyle(.white)
                             }
-
+                            
                         }
                         .padding()
                         .padding(.top, 50)

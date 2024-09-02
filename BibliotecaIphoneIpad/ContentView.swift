@@ -16,9 +16,15 @@ struct ContentView: View {
             if loginShow.show {
                 Home()
                     .ignoresSafeArea(.all)
-                    .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+//                    .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
             } else {
                 Login()
+//                    .preferredColorScheme(.light)
+            }
+        }
+        .onAppear() {
+            if (UserDefaults.standard.object(forKey: "sesion")) != nil {
+                loginShow.show.toggle()
             }
         }
     }
