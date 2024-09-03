@@ -50,6 +50,13 @@ struct NavBar: View {
 
                 }
             } else {
+                Button(action: {
+                    index = "Agregar"
+                }) {
+                    Image(systemName: "plus")
+                        .font(.system(size: 26))
+                        .foregroundStyle(.white)
+                }
                 // Menu para Iphone
                 Button(action: {
                     withAnimation() {
